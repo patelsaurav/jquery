@@ -1,0 +1,22 @@
+--> javascript library use for event heandling,ajax
+
+event
+mouse event-->
+click,dbclick,mouseenter,mouseleave
+
+keyboard event-->
+keypress,keydown,keyup
+
+form event-->
+submit,change,focus,blur
+
+document/window events-->
+load,resize,scroll,unload
+
+
+//selector
+
+class,id,element
+
+
+//jquery provide effects

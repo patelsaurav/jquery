@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- we can download or add cdn link  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <button>Click me</button>
+    <div id="myDiv">please hide me</div>
+    <input type="text" />
+    <span id="focusid">intput only good things</span>
+    <hr />
+    <p>First para</p>
+    <p>Second para</p>
+    <p>Third para</p>
+
+    <hr />
+    <div id="addbtn">Add New Node</div>
+    <ul id="addlist"></ul>
+    <script>
+        $(document).ready(function(){
+             $('button').click(function(){
+              alert('my first button is clicked')
+             })
+
+        });
+        $(document).ready(function(){
+          $('button').click(function(){
+              $('#myDiv').toggle(1000);
+          })
+        })
+
+      $(document).ready(function(){
+          $('span').hide();
+
+          $('input').focus(function(){
+            $('#focusid').show();
+          });
+          $('input').blur(function(){
+            $('#focusid').hide();
+          })
+      });
+
+      $(document).ready(function(){
+        $('p').on({
+            mouseenter:function(){
+                $(this).css('backgroundColor','red');
+            },
+            mouseleave:function(){
+                $(this).css('backgroundColor','black')
+            },
+            click:function(){
+              alert('this is the way to handle multiple events.')
+            }
+        })
+
+        //append
+        //prepend that append at start
+        $('#addbtn').click(function(){
+            $('ul').append('<li>This is new node </li>');
+        })
+      })
+
+      //good topic is dom traversing
+
+      //jquery ajax.
+      $(function(){
+
+        $.ajax({
+           type:'GET',
+           url:'/api/orders',
+           success:function(orders){
+            $.each(orders,function(i,order){
+                $orders.append('<li>name:'+ order.name+',drink: '+order.drink+' </li>');
+            })
+           }
+        })
+      })
+    </script>
+  </body>
+</html>
